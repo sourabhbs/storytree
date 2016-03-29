@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	    <meta charset="utf-8">
+	    <title>Story Tree P V 1.0 </title>
+
+	    <!--css-->
+	    <link rel="stylesheet" type="text/css" href="./css/storytree.css">
+	    <link rel="stylesheet" href="./css/demo.css">
+	   	<link rel="stylesheet" href="./css/sidebar-collapse.css">
+
+	    <!--js-->
+	    <script type="text/javascript" src="./js/jquery.js"></script>
+      <script type="text/javascript" src="./js/d3.min.js"></script>
+	    <script type="text/javascript" src="./js/ui.js"></script>
+	    <!--<script type="text/javascript" src="./js/project.js"></script>-->
+	    <script type="text/javascript" src="./js/summary.js"></script>
+</head>
+<body bgcolor="#404040">
+	<aside class="sidebar-left-collapse">
+
+	<!--Sidebar-->		
+    <div class="sidebar-links">
+      <!--Story Operations-->
+      
+      <div class="link-blue selected">
+        <a id="op_1" href="#" onclick=linkClick("op_1")> Story Operations</a>
+        <!--
+        <ul class="sub-links">
+          <li><a id ="pr_1" href="#" onclick=newProj()>New Project</a></li>
+          <li><a id ="pr_2" href="#" onclick=openProj()>Open Project</a></li>
+          <li><a id ="pr_3" href="#" onclick=saveProj()>Save Project</a></li>
+          <li><a id ="pr_4" href="#" onclick=exitProj()>Exit Project</a></li>
+        </ul>
+      -->
+
+        <ul class="sub-links">
+        
+<!-- <li><a id ="tr_1" href="#" onclick=addNode() style="color:#60c6d4">Add Node (Alt+N)</a></li>  -->
+
+<li><a id ="tr_0" href="#" onclick=addPlot() style="color:#60c6d4">Add Story Plot (Alt+P)</a></li>
+        <li><a id ="tr_2" href="#" onclick=delNode() style="color:#60c6d4">Delete Node (Alt+D)</a></li>
+          <li>
+            <div class="control-group">
+              <label id="tr_3" class="control-label" for="text" style="color:#ffffff">Node Label</label>
+                <div class="controls">
+                  <input id="tr_4" type="text">
+                </div>
+            </div>
+          </li>  
+          <li>
+            <div class="control-group">
+              <label id="tr_5" class="control-label" for="textarea" style="color:#ffffff">Node Details </label>
+                <div class="controls">
+                  <textarea id="tr_6" class="form-control input-xlarge" id="taNodeDetails" rows="5"></textarea>
+                </div>
+            </div>
+          </li>  
+          <li><a id ="tr_7" href="#" onclick=updateNode() style="color:#60c6d4">Update Node (Alt+U)</a></li>
+        </ul>
+      </div>
+    
+      <!--Summary Operations-->
+      <div class="link-yellow">
+        <a id="op_2" href="#" onclick=linkClick("op_2")>Summary Operations</a>
+        <ul class="sub-links">
+          <li>
+            <a id="sm_1" href="#" onclick=addToIntro() style="color:#f5d88e">Classify as Introduction</a>
+          </li>
+          <li><select id="sm_2" multiple style="width: 150px;" size="5" ></select></li>
+          <li>
+            <a  id="sm_3" href="#" onclick=removeIntro() style="color:#f5d88e">Remove</a> 
+          </li>
+          <li>
+            <a  id="sm_4" href="#" onclick=addToBd1() style="color:#f5d88e">Classify as Body 1</a>
+          </li>  
+          <li><select id="sm_5" multiple style="width: 150px;" size="5" ></select></li>
+          <li>
+            <a  id="sm_6" href="#" onclick=removeBd1() style="color:#f5d88e">Remove</a> 
+          </li>
+          <li>
+            <a  id="sm_7" href="#" onclick=addToBd2() style="color:#f5d88e">Classify as Body 2 </a>
+          </li>
+          <li><select id="sm_8" multiple style="width: 150px;" size="5" ></select></li>
+          <li>
+            <a  id="sm_9" href="#" onclick=removeBd2() style="color:#f5d88e">Remove</a> 
+          </li>
+          <li>
+            <a  id="sm_10" href="#" onclick=addToCon() style="color:#f5d88e">Classify as Conclusion </a>
+          </li>
+          <li><select id="sm_11" multiple style="width: 150px;" size="5" ></select></li>
+          <li>
+            <a  id="sm_12" href="#" onclick=removeCon() style="color:#f5d88e">Remove</a> 
+          </li>
+          <li>
+            <a  id="sm_13" href="#" onclick=genSum() style="color:#f7f740">Generate Summary</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+  <div id="scut" class="shortcut"> 
+  <!--<font face = "sabon" color = "#ffffff" size = "3.0">         
+  <b>
+  <u> Short Cut
+  </u>
+  </b>
+  <br><br>
+  </font>-->
+  </div>
+  <!--SVG Canvas-->
+  <div class="main-content">
+    <div class="menu">
+      <div id="content"></div>
+    </div>
+  </div>
+  <script type="text/javascript" src="./js/tree.js"></script>
+
+</body>
+</html>
